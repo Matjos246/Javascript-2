@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="show"></div>
+    <script>
+        var gottenStudent = localStorage.getItem('person')
+        console.log(gottenStudent);
+
+        var gottenArr = JSON.parse(localStorage.getItem('data'))
+        console.log(gottenArr);
+        for(i=0; i < gottenArr.length; i++) {
+            show.innerHTML += `
+                <h1>${gottenArr[i]}</h1>
+            `
+        }
+    </script>
+</body>
+</html>

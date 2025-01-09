@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="getInfo()">Get information</button>
+    <button onclick="getInfo2()">Get information 2</button>
+    <div id="showcase"></div>
+
+    <script>
+        const endpoint = 'https://jsonplaceholder.typicode.com/users'
+        const endpoint2 = 'https://api.github.com/users'
+        const endpoint3 = 'http://api.citybik.es/v2/networks'
+
+        let city;
+
+        const getInfo = async () => {
+            try {
+                const response = await fetch(endpoint3)
+                // console.log(response);
+                const newResponse = await response.json()
+                console.log(newResponse.networks);
+                let latest = newResponse.networks
+                latest.map((data, index)=>{
+                    city = data.location.city
+                    showcase.innerHTML += `
+                        <p>${index+1}. ${city}</p>
+                    `
+                })
+            } catch (error) {
+                console.log(error);
+            }
+        }
+
+        const getInfo2 = () => {
+            fetch(endpoint2)
+            .then(response=>response.json())
+            .then(newResponse=>{
+                console.log(newResponse);
+                newResponse.map((person, index)=>{
+                    showcase.innerHTML += `
+                        <p>${index+1}. ${person.login}</p>
+                        <img src=${person.avatar_url} alt="profile picture" style="border-radius: 100%; width: 100px; height: 100px;" />
+                    `
+                })
+            })
+            .catch(err=>{
+                console.log(err)
+            })
+        }
+
+
+        // array.find((person)=>{return person.email == input.value})
+        // array.find(person=>person.email == input.value)
+    </script>
+</body>
+</html>

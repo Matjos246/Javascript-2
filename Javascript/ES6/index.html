@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="show"></div>
+    <script>
+        var food = 'Pounded Yam';
+        var food = 90
+        console.log(food);
+        
+        let drink = 'Water'
+        drink = 'Fanta'
+
+        console.log(drink);
+        const pi = 22/7
+        //  pi = 9
+        console.log(pi);
+        
+
+        function mariam(food) {
+            console.log(`I will eat ${food}`);
+        }
+
+        mariam("bread")
+        const caro = (name) => {
+            console.log(name);
+        }
+        caro('Mike')
+
+        let foodArray = ['Rice', 'Beans', 'Yam', 'Eba', 'Amala']
+        // for(i=0; i < foodArray.length; i++) {
+        //     let data = foodArray[i]
+        //     show.innerHTML += `<p>${i+1}. ${data}</p>`
+        // }
+        foodArray.map((food, i)=>{
+            show.innerHTML += `<p>${i+1}. ${food}</p>`
+        })
+        // filter, find, any other two
+
+        setTimeout(()=>{
+            console.log('I will show after 4 seconds');
+        }, 10000)
+
+        // Return statement
+        const testing = (city) => {
+            return city
+        }
+
+        let ilu = testing('Ibadan')
+        console.log(ilu);
+        
+
+        function add() {
+            return 90
+            console.log(78);
+        }
+
+        let sum = add()
+        console.log(sum);
+    </script>
+</body>
+</html>

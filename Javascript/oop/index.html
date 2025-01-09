@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        class Car {
+            constructor(colour, engine, model, auto) {
+                this.colour = colour,
+                this.engine = engine,
+                this.model = model,
+                this.auto = auto
+            }
+            start() {
+                alert(`${this.model} has vrooooooom`)
+            }
+        }
+
+        let bugatti = new Car('red', 'V12', 'Spider', true)
+        let ijapa = new Car('blue','V2', 'Tortoise', false)
+        console.log(bugatti, ijapa);
+        bugatti.start()
+        
+    </script>
+</body>
+</html>

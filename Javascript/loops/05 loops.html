@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loop</title>
+</head>
+<body>
+    
+    <div id="showResult"><marquee behavior="" direction="">My World of possibilities</marquee></div>
+    <script>
+         showResult.innerHTML;
+        // console.log(showResult); to have access to entire div
+        //  console.log(showResult.innerHTML); to have access to what is being typed only inside the div
+        // showResult.innerHTML= "Hello world"
+        
+          
+        // for(startingValue; conditions; steps){
+
+        // } running number 1-100 using loop
+        for( var i=1; i<=100; i++){
+            console.log(i);
+            
+        }
+    //    to run My world in 20times using for loop
+    for (var i=1; i<=100; i++){
+        console.log( "My world");
+        
+    }
+    for (var i=1; i<=100; i+=2){
+        console.log(i);
+
+    }
+    console.log("Happy new year");
+    for (var i=1; i<=10; i++){
+        if (i==5){
+            continue;
+        }else{
+            console.log(i);
+        }
+    }
+    for (var k=30; k>0;k--){
+        console.log(k);
+    }
+    // from 1-10
+    for (var h=1; h<=10; h++){
+        console.log(h + " you am a developer");
+        // showResult.innerHTML = h + " you am a developer"
+
+    }
+
+    for (var j=1; j<=10; j++){
+        console.log("I am a developer");
+    }
+
+    
+    // infinity loop
+    for(var v=9; v>=1; v--){
+        console.log(v + " is a figure");
+        
+    }
+    // // combination for loop and if statment 
+    // for (var y=0; y<=25; y++)
+    //     if(y%2==0){
+    //         console.log(y +"is an even number" );
+    //         showResult.innerHTML = y +"is an even number" 
+    //     }else{
+    //         console.log(y + "is an Old number");
+    //         showResult.innerHTML = y +"is an Old number" 
+    //     }
+
+        // for the above program needs to retain the previous value by introducing concantenation using assignment operator and the below will show list of Old and even number in the div
+        for (var y=0; y<=25; y++)
+        if(y%2==0){
+            // console.log(y +" is an even number" );
+            // showResult.innerHTML +=   y +" is an even number"
+             showResult.innerHTML +=  `<p style="color:purple">${y}  is an even number</p> `
+        }else{
+            // console.log(y + " is an Old number");
+            // showResult.innerHTML += y +" is an Old number" 
+            showResult.innerHTML +=`<p style="color:orange"> ${y} is an Old number<p/>`
+        }
+//  Template literal `${ }` is a more modern way of writing our code backtick,dollarsign, and curly braces these makes its dynamic used as example in line 76 and 80
+        var animal = "Fish"
+        console.log(animal + " is a domestic animal ");
+         var food = "Garri and sugar"
+         console.log(food + " is a very delicious meal concantenate with some floating berries like groundnut,kulikuli just a few of them  ");
+         console.log( food+ " is very delicious when taken with "+ animal);
+         console.log(`${food} is very delicious when taken with ${animal}`);
+         
+         
+         
+        
+
+            // fizzbuzz
+            for(var f=0; f<=100; f++ )
+            if ( f%3==0){
+                console.log("fizz");
+                s
+            }else if( f%5==0){
+                console.log("Buzz");
+            }else{
+                console.log("fizzBuzz");
+                
+            }
+        
+            
+    
+   
+    </script>
+</body>
+</html>

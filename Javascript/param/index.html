@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="callNames('DCP', 900, 1500)">DCP</button>
+    <button onclick="callNames('Mariam', 750, 1750)">Mariam</button>
+    <button onclick="callNames('Pelumi', 875, 1455)">Pelumi</button>
+    <button onclick="callNames()">Void</button>
+
+    <script>
+        function callNames(theirName='user', age=0, accBal=0) {
+            console.log(`My name is ${theirName} and my age is ${age} while my account balance is ${accBal}`);
+            
+        }
+    </script>
+</body>
+</html>

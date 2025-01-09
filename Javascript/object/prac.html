@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <h1>Sign Up</h1>
+    <input type="text" id="firstName" placeholder="Enter your first name">
+    <input type="text" id="lastName" placeholder="Enter your last name">
+    <input type="email" id="email" placeholder="Enter your email">
+    <input type="password" id="password" placeholder="Enter your password">
+    <button id="btnSubmit">Submit</button>
+
+    <script>
+        let allStudents = []
+        const btn = document.getElementById('btnSubmit')
+        const fName = document.getElementById('firstName')
+        const lName = document.getElementById('lastName')
+        const mail = document.getElementById('email')
+        const pass = document.getElementById('password')
+        btn.addEventListener('click', ()=>{
+            if(fName.value === '' || lName.value === '' || mail.value === '' || pass.value === '') {
+                alert('Fill in the empty spaces')
+            } else {
+                // console.log(fName.value, lName.value, mail.value, pass.value);
+                const obj = {
+                    first: fName.value,
+                    last: lName.value,
+                    maily: mail.value,
+                    pin: pass.value
+                }
+                console.log(obj);
+                allStudents.push(obj)
+                localStorage.setItem('students', JSON.stringify(allStudents))
+                setTimeout(()=>{
+                    window.location.href = 'signin.html'
+                }, 3000)
+                console.log(allStudents);
+                fName.value = ''
+                lName.value = ''
+                mail.value = ''
+                pass.value = ''
+            }
+        })
+
+        let allBooks = [
+            {
+                name: 'Things fall apart',
+                author: 'Chinua Achebe'
+            },
+            {
+                name: 'Last Days at Forcados',
+                author: 'Neyo'
+            },
+            {
+                name: 'Why Nations fail',
+                author: 'Daddy'
+            },
+            {
+                name: 'Rich dad, poor dad',
+                author: 'Daddy'
+            }
+        ]
+    </script>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="show"></div>
+    <script>
+            if(i%3 === 0 && i%5 === 0) {
+                show.innerHTML += `<p style="color:red;">${i} is a fizzbuzz</p>`
+            } else if(i%3 === 0) {
+                show.innerHTML += `<p style="color:blue;">${i} is a fizz</p>`
+            } else if(i%5 === 0) {
+                show.innerHTML += `<p style="color:brown;">${i} is a buzz</p>`
+            } else {
+                show.innerHTML += `<p style="color:crimson;">${i} is not fizzing nor buzzing</p>`
+            }
+        }
+    </script>
+</body>
+</html>
