@@ -1,0 +1,32 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    
+}
+#colNumber{
+    color: brown;
+    background-color: gainsboro;
+   
+}
+#rowNumber{
+    color: brown;
+    background-color: gainsboro;
+}
+.arithic{
+    padding: 50px;
+    margin: 60px;
+}
+.col{
+    padding: 10px;
+    margin: 5px;
+}
+.row{
+    padding: 10px;
+    margin: 5px;
+}
+.section{
+    padding: 1px;
+    margin: 5px;
+}
+

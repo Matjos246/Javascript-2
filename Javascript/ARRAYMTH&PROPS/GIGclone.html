@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GIG store</title>
+    <link rel="stylesheet" href="./GIG.css">
+</head>
+<body>
+  
+    <input type="" placeholder="Enter your item "   id="items" autofocus value=""  >
+    <!-- <button onclick="alert('I am working')">Add item</button> == inline javascript to be more unique then we introduce function -->
+<br><br>
+    <button onclick="submitItems()">Add item</button> 
+    <!-- <button onclick="deleteLast()">deleteLast</button>   -->
+    <!-- <button onclick="deleteFirst()">deleteFirst</button> -->
+    <!-- <button onclick="editAny()">editItem</button> -->
+    <div id="showItems"></div>
+
+
+
+    <script>
+        //To gain access to wht the user is typing will use items.value
+       // console.log(items.value); here our input is items.value
+       var cart = []
+       function submitItems() {
+    if (items.value == "") {
+        alert('Kindly, place your order');
+    } else {
+        cart.push(items.value);
+        console.log(cart);
+
+        // Clear input and display
+        document.getElementById('items').value = "";
+        let itemList = '';
+        for (var i = 0; i < cart.length; i++) {
+            itemList += `<h4>${i + 1}. ${cart[i]}</h4>`;
+        }
+        document.getElementById('showItems').innerHTML = itemList;
+    }
+}
+
+        // function submitItems(){
+        //     if(items.value==""){
+        //         alert('Kindly,place your order')
+        //     }
+        //   else{
+        //     cart.push(items.value)
+        //     console.log(cart);
+        //     //to monitor our array will used loop for counting mind you index start from zero in the array,for UX our i=1
+        //      document.getElementById('items').value=" "
+        //     document.getElementById('showItems').innerHTML=" "
+        //     //To clear the previous value
+        //     for(var i=0; i<cart.length; i++){
+        //         showItems.innerHTML+=`<h4>${i+1} . ${cart[i]}</h4>`
+        //     } 
+        //   }
+        // }
+        //  function deleteLast(){
+        //     cart.pop()
+        //     document.getElementById('showItems').innerHTML=''
+        //     for(var i = 0; i<cart.length; i++){
+        //         showItems.innerHTML+=`<h4>${i+1}.${cart[i]}</h4>`
+        //     }
+        //  }
+        //  function deleteFirst(){
+        //     cart.shift()
+        //     document.getElementById('showItems').innerHTML=''
+        //     for(var i =1; i<cart.length; i++){
+        //         showItems.innerHTML+=`<h3>${i+1}.{cart[i]}</h3>`
+        //     }
+
+        //  }
+        //  function editAny(){
+        //     cart.splice()
+        //     document.getElementById('showItems').innerHTML=''
+        //     for(var i =1; i<cart.length; i++){
+        //         showItems.innerHTML+=`<h3>${i+1}.{cart[i]}</h3>`
+        //     }
+        //  }
+    </script>
+</body>
+</html>

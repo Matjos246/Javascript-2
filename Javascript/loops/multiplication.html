@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MULTIPLICATION TABLE</title>
+    <link rel="stylesheet" href="./multiplication.css">
+</head>
+<body>
+    
+    <div id="showResult" ><marquee behavior="" direction=""><em>MULTIPLICATION TABLE </em></marquee></div>
+    
+    <script>
+        for(a=1 ; a<=12; a++){
+            for(b=1; b<=12; b++){
+                console.log(`${a} x ${b} = ${a * b}`);
+                showResult.innerHTML+= `<p style= "color:brown"> ${a} x ${b}  = ${a * b}<p/>` 
+            }
+        }
+    </script>
+    
+</body>
+</html>

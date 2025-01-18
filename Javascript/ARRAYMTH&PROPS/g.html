@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" placeholder="Enter your item" autofocus id="item" value="" >
+    <button onclick="submitItem()">Add items</button>
+    <button onclick="delLast()">deleteLast</button>
+    <button onclick="delFirst()">deleteFirst</button>
+    <button onclick="addFirst()">addFirst</button>
+   
+    <div id="showResult"></div>
+    <script>
+        var cart = []
+        function submitItem(){
+         if(item.value==""){
+            alert('kindly, place your order')
+         }
+         else{
+            cart.push(item.value)
+            console.log(cart);
+            document.getElementById('item').value=""
+            document.getElementById('showResult').innerHTML=''
+            for( var i = 0; i<cart.length; i++){
+                showResult.innerHTML+=`<h3>${i+1}.${cart[i]}</h3>`
+            }
+         }
+        }
+        function delLast(){
+            cart.pop()
+            document.getElementById('showResult').innerHTML=''
+            for(var i = 0; i<cart.length; i++){
+                showResult.innerHTML+=`<h3>${i+1}.${cart[i]}</h3>`
+            }
+        }
+        function delFirst(){
+           cart.shift()
+           document.getElementById('showResult').innerHTML=''
+           for(var i =0; i<cart.length; i++){
+            showResult.innerHTML+=`<h3>${i+1}.${cart[i]}</h3>`
+           }
+        }
+        function addFirst(){
+            cart.unshift()
+            document.getElementById('showResult').innerHTML=''
+            for (var i = 0; i<cart.length; i++){
+                showResult.innerHTML+=`<h3>${i+1}.${cart[i]}</h3>`
+            }
+        }
+        // function displayCart(){
+        //     alert('yert')
+        // }
+        //  displayCart()
+    </script>
+</body>
+</html>

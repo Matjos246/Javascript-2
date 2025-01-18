@@ -6,26 +6,21 @@
     <title>Loop</title>
 </head>
 <body>
-    
     <div id="showResult"><marquee behavior="" direction="">My World of possibilities</marquee></div>
     <script>
          showResult.innerHTML;
         // console.log(showResult); to have access to entire div
         //  console.log(showResult.innerHTML); to have access to what is being typed only inside the div
-        // showResult.innerHTML= "Hello world"
-        
-          
+        // showResult.innerHTML= "Hello world"     
         // for(startingValue; conditions; steps){
 
         // } running number 1-100 using loop
         for( var i=1; i<=100; i++){
-            console.log(i);
-            
+            console.log(i); 
         }
     //    to run My world in 20times using for loop
     for (var i=1; i<=100; i++){
-        console.log( "My world");
-        
+        console.log( "My world");   
     }
     for (var i=1; i<=100; i+=2){
         console.log(i);
@@ -39,7 +34,7 @@
             console.log(i);
         }
     }
-    for (var k=30; k>0;k--){
+    for (var k=30; k>=0;k--){
         console.log(k);
     }
     // from 1-10
@@ -80,33 +75,44 @@
             // showResult.innerHTML += y +" is an Old number" 
             showResult.innerHTML +=`<p style="color:orange"> ${y} is an Old number<p/>`
         }
-//  Template literal `${ }` is a more modern way of writing our code backtick,dollarsign, and curly braces these makes its dynamic used as example in line 76 and 80
+//NESTED LOOP 
+// for( var d=0; d>=30; d++);{
+//     for(var e=1; e>=20; e++){
+
+//     }
+// }
+//Putting 20chewgums in one cartoon in 10places using nested loop
+for(var carton=1; carton<=10; carton++){
+    for (var chewgum=1; chewgum<=20; chewgum++){
+        // console.log(carton);
+        console.log(`carton ${carton}, chewgum ${chewgum}`);
+    }
+}
+//To create multiplication table using nested loop
+for(var a=1; a<=12; a++){
+    for(var b=1; b<=12; b++){
+        console.log(`${a} x ${b} = ${a * b}`);
+        showResult.innerHTML+= `<p style= "color:brown"> ${a} x ${b}  = ${a * b}<p/>` 
+
+    }
+}
+//  Template literal `${ }` is a more modern way of writing our code backtick,dollarsign, and curly braces these makes its dynamic used as example in line 76 
         var animal = "Fish"
         console.log(animal + " is a domestic animal ");
          var food = "Garri and sugar"
          console.log(food + " is a very delicious meal concantenate with some floating berries like groundnut,kulikuli just a few of them  ");
          console.log( food+ " is very delicious when taken with "+ animal);
          console.log(`${food} is very delicious when taken with ${animal}`);
-         
-         
-         
-        
-
+         showResult.innerHTML += `<p style = 'padding:5px 0p; color:gray;background:brown'>${food} is very delicious when taken with ${animal}`
             // fizzbuzz
             for(var f=0; f<=100; f++ )
             if ( f%3==0){
-                console.log("fizz");
-                s
+                console.log("fizz");               
             }else if( f%5==0){
                 console.log("Buzz");
             }else{
-                console.log("fizzBuzz");
-                
+                console.log("fizzBuzz");   
             }
-        
-            
-    
-   
     </script>
 </body>
 </html>
