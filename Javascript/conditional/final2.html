@@ -22,13 +22,17 @@
         
         function gradeChecker() {
             if(score.value == '') {
-                alert("When you are not blind, fill in something alaye")
+                alert("Kindly, Input your score")
             } else  {
                 var userScore = Number(score.value)
-                if(userScore >= 0 && userScore < 40) {
+                if(userScore = 0 &&   userScore <40) {
                     // showResults.innerHTML = ''
                     showResults.innerHTML = 'F - Fail'
                     songFail.play()
+                }else if(userScore>=40){
+                    showResults.innerHTML = 'P - Pass'
+                    // console.log('pass');
+                    
                 }
             }
         }

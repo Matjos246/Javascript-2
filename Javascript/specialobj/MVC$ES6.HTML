@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OBJ</title>
+</head>
+<body>
+    <script>
+        console.log(Math);
+        var testnum = Math.round(44.89);
+        console.log(testnum);
+        //Math obj and Date obj
+        var time = new Date() //it use to fetch current date and time in app
+        console.log(time);
+        var Day = new Date().toLocaleDateString();
+        console.log(time,Day);
+        var time = new Date().toLocaleTimeString();
+        console.log(time);
+        var time = new Date().toLocaleString();
+        console.log(time);
+       // MVC
+        //var-let-const
+        var food = 'Rice'
+        var food = 'bread'
+        console.log(food);
+        let drinkOne = 'sprite'
+        let drinkTwo = 'fanta'
+
+        const city = 'Ibadan'
+        // city = 'oyo'
+        console.log(city);
+        //Higher order function: Taking in other functions as parameter
+
+    function sipWater(num){
+        //code
+        console.log(num);
+    }
+    sipWater(232) 
+    let newArray = [
+        {
+         country: 'Nigeria',
+        capital: 'Abuja'
+        },
+        {
+            country: 'Ghana',
+            capital: 'Accra'
+        },
+        {
+            school: 'Stars comprehensive college',
+            department: 'Science',
+            class: 'SS3',
+            Age: '18+'
+        },
+        {
+            position:'software Engineer',
+            sex: 'Male',
+            course: ' web developer'
+        }
+    ]
+    //To look thru this array object by calling up for loop
+    // for (let index = 0; index < newArray.length; index++) {
+    //     const element = newArray[index];
+    //     console.log(element.country, element.capital);
+    // }
+    //however shorter way to look thru our array obj using array.Map... .map is afunction, but just a function is also High order function and can takes in any parameter any words here we USED info. other higher other function are filter()  find()
+// newArray.map((info)=>{
+//     console.log(info.capital, info.country);
+    
+// })
+
+newArray.find((show)=>{
+    console.log(show.school, show.department, show.class , show.Age);   
+})
+newArray.filter((show)=>{
+    console.log(show.school, show.department, show.class , show.Age);   
+})
+
+newArray.filter((show)=>{
+    console.log( show.position, show.course , show.sex);   
+})
+    // newArray.map(function(){})
+    // newArray.map(()=>{})
+        // const checkSum=(a,b)=>{
+        //     console.log(a+b); 
+        
+        // checkSum(5,9)}
+        //return statment ends the all program, once is used in a code anything below it doesnot work again by trying to run another program in that same bracket
+        const checkSum=(a,b)=>{
+            return (a+b);  
+        }
+
+        let sum1 = checkSum(2,5)
+        let sum2 = checkSum(6,5)
+        console.log(sum1*sum2);
+        //MVC ARCHITECTURE is majorly all about how our code will be and analyze .
+        // View: user interface
+        
+        
+
+    </script>
+    
+</body>
+</html>

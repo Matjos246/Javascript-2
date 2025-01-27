@@ -3,54 +3,118 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Ecommerce</title>
+    <link rel="stylesheet" href="./GIG.css">
+    
 </head>
 <body>
-    <input type="text" placeholder="Enter your item" autofocus id="item" value="" >
-    <button onclick="submitItem()">Add items</button>
-    <button onclick="delLast()">deleteLast</button>
-    <button onclick="delFirst()">deleteFirst</button>
-    <button onclick="addFirst()">addFirst</button>
+    <div class="cartie" >
+        <h2 class="title">GIG Store</h2>
+        <input type="text" placeholder="Enter your item" id="item" value="" autofocus > 
+       
+       
+        <div class="btn">
+            <button onclick="submitItem()" id="subitem">Add items</button> <br>
+            <div class="btnon">
+                <button onclick="delLast()"  id="bton">deleteLast</button>
+                <button onclick="delFirst()" id="bton">deleteFirst</button>
+                <button onclick="addFirst()" id="bton">addFirst</button>
+                <button onclick="editItem()" id="bton">editAny</button>
+            </div>
+    
+      
+        </div>
+        <marquee behavior="" direction=""> <div id="showTime"></div></marquee>
+       
    
+    <div id="nope">No item yet</div>
+    <div id="show" style="display:none; ">PRODUCTS</div>
+
     <div id="showResult"></div>
+
+</div>
+   
+  
     <script>
+          var time = new Date() //it use to fetch current date and time in app
+          console.log(time);
+          showTime.innerHTML=`${time}`
         var cart = []
         function submitItem(){
          if(item.value==""){
             alert('kindly, place your order')
          }
          else{
+            nope.style.display = 'none'
+            show.style.display = 'block'
             cart.push(item.value)
             console.log(cart);
-            document.getElementById('item').value=""
-            document.getElementById('showResult').innerHTML=''
-            for( var i = 0; i<cart.length; i++){
-                showResult.innerHTML+=`<h3>${i+1}.${cart[i]}</h3>`
-            }
+            console.log(item.value);
+            
+           
+            displayCart()
+             document.getElementById('item').value=""
+    
          }
         }
         function delLast(){
-            cart.pop()
-            document.getElementById('showResult').innerHTML=''
-            for(var i = 0; i<cart.length; i++){
-                showResult.innerHTML+=`<h3>${i+1}.${cart[i]}</h3>`
+            if(cart.length<1){
+                alert('Add an item')
+            }else{
+                var confirmation=confirm('Are you sure you want to delete,warning! this action is irreversible ')
+            console.log(confirmation);
+            if(confirmation==true){
+                cart.pop()
+                displayCart()
+                console.log((cart)); 
+            }else{
+                displayCart()
+            }
             }
         }
         function delFirst(){
-           cart.shift()
-           document.getElementById('showResult').innerHTML=''
-           for(var i =0; i<cart.length; i++){
-            showResult.innerHTML+=`<h3>${i+1}.${cart[i]}</h3>`
-           }
-        }
-        function addFirst(){
-            cart.unshift()
-            document.getElementById('showResult').innerHTML=''
-            for (var i = 0; i<cart.length; i++){
-                showResult.innerHTML+=`<h3>${i+1}.${cart[i]}</h3>`
+            if(cart.length<1){
+                alert('Add an item')
+            }else{
+                cart.shift()
+                displayCart()
             }
+          
         }
       
+        function addFirst() {
+    if (item.value == "") {
+        alert("Please enter an item to add to the beginning of the cart.");
+    } else {
+        cart.unshift(item.value); // Add the value at the beginning of the cart
+        displayCart(); // Update the displayed cart
+        document.getElementById("item").value = ""; // Clear the input field
+    }
+}
+
+
+
+      //for  all the function there is a repetition of code all through(for loop), to concise so the function can be kept somewia and just be call-in where needed. 
+      function displayCart(){
+          document.getElementById('showResult').innerHTML=''
+        for (var i = 0; i<cart.length; i++){
+                showResult.innerHTML+=`<h3>${i+1}.${cart[i]}</h3>`
+            }
+      }
+      //splice is used for for del and edit and index in our array and it 3 parameters , but first 2 is highly demand or used splice(startingIdex, numberOfItems, replacement) and use it the application,
+        var people= [ 'Ayo' , 'dele', 'sola','leke']
+        console.log(people);
+        people.splice(2,1)
+        console.log(people);
+        people.splice(0,0,'joshua')
+        console.log(people);
+       
+        
+        // var people= [ 'Ayo' , 'dele', 'sola','leke']
+        // console.log(people);
+        // showResult.innerHTML=`<p>${people}</p>`
+        
+
     </script>
 </body>
 </html>

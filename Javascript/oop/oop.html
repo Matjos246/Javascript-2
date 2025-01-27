@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OOP</title>
+</head>
+<body>
+    <!-- //To create an obj or Obj sample -->
+     <script>
+        // let newObj  = {}
+        // let newObj2 = {}
+        // let allStudents = []
+        // console.log(typeof allStudents);
+       class Students {
+        constructor(personName,id,age,gender,course){
+            this.name = personName,
+            this.age = age,
+            this.id = id,
+            this.course = course
+            this.gender = gender
+        }
+       }
+       let firstPerson = new Students('Ayobami','28','22333','software engineering','male')
+       let secondPerson = new Students('joshua','30','5555','web development','male')
+       console.log(firstPerson,secondPerson);
+    //    using oop for obj is more simpler and less rigid compare to other ways of setting out variable of obj
+       
+     </script>
+
+
+</body>
+</html>

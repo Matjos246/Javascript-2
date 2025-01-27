@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ecommerce</title>
+    <link rel="stylesheet" href="./GIG.css">
+</head>
+<body>
+    <div class="cartie">
+        <h2 class="title">GIG Store</h2>
+        <input type="text" placeholder="Enter your item" id="item" value="" autofocus>
+
+        <div class="btn">
+            <button onclick="submitItem()" id="subitem">Add items</button> <br>
+            <div class="btnon">
+                <button onclick="delLast()" id="bton">Delete Last</button>
+                <button onclick="delFirst()" id="bton">Delete First</button>
+                <button onclick="addFirst()" id="bton">Add First</button>
+                <button onclick="editItem()" id="bton">Edit Item</button>
+            </div>
+        </div>
+        <marquee behavior="" direction="">
+            <div id="showTime"></div>
+        </marquee>
+
+        <div id="nope">No item yet</div>
+        <div id="show" style="display:none;">PRODUCTS</div>
+
+        <!-- Table to display the cart items -->
+        <table id="cartTable" style="width: 70%; margin-top: 20px; display:none; justify-content: center; justify-items: center;">
+            <thead>
+                <tr>
+                    <th>Index</th>
+                    <th>Item</th>
+                </tr>
+            </thead>
+            <tbody id="showResult" style="display: block;"></tbody>
+        </table>
+    </div>
+
+    <script>
+        var time = new Date(); // Get current date and time
+        document.getElementById("showTime").innerHTML = `${time}`;
+
+        var cart = [];
+
+        // Function to submit an item
+        function submitItem() {
+            if (item.value === "") {
+                alert('Kindly, place your order');
+            } else {
+                nope.style.display = 'none';
+                show.style.display = 'block';
+                cart.push(item.value); // Add the item to the cart
+                displayCart();
+                document.getElementById('item').value = ""; // Clear input field
+            }
+        }
+
+        // Function to delete the last item in the cart
+        function delLast() {
+            if (cart.length < 1) {
+                alert('Add an item');
+            } else {
+                var confirmation = confirm('Are you sure you want to delete? This action is irreversible.');
+                if (confirmation) {
+                    cart.pop(); // Remove the last item
+                    displayCart();
+                }
+            }
+        }
+
+        // Function to delete the first item in the cart
+        function delFirst() {
+            if (cart.length < 1) {
+                alert('Add an item');
+            } else {
+                cart.shift(); // Remove the first item
+                displayCart();
+            }
+        }
+
+        // Function to add an item at the beginning of the cart
+        function addFirst() {
+            if (item.value === "") {
+                alert("Please enter an item to add to the beginning of the cart.");
+            } else {
+                cart.unshift(item.value); // Add item to the front of the cart
+                displayCart();
+                document.getElementById("item").value = ""; // Clear input field
+            }
+        }
+
+        // Function to edit any item in the cart
+        function editItem() {
+            alert("Editing functionality is not implemented yet.");
+        }
+
+        // Function to display the items in the cart in a table format
+        function displayCart() {
+            if (cart.length === 0) {
+                document.getElementById('showResult').innerHTML = '';
+                document.getElementById('cartTable').style.display = 'none'; // Hide table if cart is empty
+                return;
+            }
+
+            document.getElementById('cartTable').style.display = 'table'; // Show table if there are items in the cart
+
+            let tableContent = cart.map((item, index) => {
+                return `
+                    <tr>
+                        <td>${index + 1}</td>
+                        <td>${item}</td>
+                    </tr>
+                `;
+            }).join('');
+            document.getElementById('showResult').innerHTML = tableContent;
+        }
+
+    </script>
+</body>
+</html>

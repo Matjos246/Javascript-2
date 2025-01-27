@@ -1,6 +1,53 @@
 *{
-    padding: 3px;
-    margin: 4px;
-    box-sizing: border-box;
+    padding: 10px 25px;
+    margin: 10px;
     justify-items: center;
+    justify-content: space-around;
+   
 }
+
+h2{
+    color: indianred;
+    padding: 20px;
+    margin:30px;
+}
+.btn{
+    padding: 10px;
+    margin: 5px;
+}
+#subitem{
+    color:honeydew;
+    background-color: gray;
+    padding: 10px;
+    margin:10px;
+  
+    display: block;
+}
+
+ #subitem:hover{
+    color: burlywood;
+ }
+.btn .btnon{
+    padding: 50px, 10px;
+    margin: 10px , 20px;
+ }
+ .bton:hover{
+    
+    color: brown;
+ }
+ #showTime{
+    font-size: medium;
+    font-weight: bold;
+    font-style: italic;
+    color: rgb(22, 49, 85);
+ }
+ #show{
+   font-family: Georgia, 'Times New Roman', Times, serif;
+   font-weight: bolder;
+   font-size: x-large;
+   color: burlywood;
+ }
+ #show:hover{
+    color:brown;
+ }
+ 

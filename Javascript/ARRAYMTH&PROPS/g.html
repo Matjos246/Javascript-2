@@ -8,11 +8,12 @@
 <body>
     <input type="text" placeholder="Enter your item" autofocus id="item" value="" >
     <button onclick="submitItem()">Add items</button>
+    <div id="showResult"></div>
     <button onclick="delLast()">deleteLast</button>
     <button onclick="delFirst()">deleteFirst</button>
     <button onclick="addFirst()">addFirst</button>
    
-    <div id="showResult"></div>
+    
     <script>
         var cart = []
         function submitItem(){
@@ -30,11 +31,24 @@
          }
         }
         function delLast(){
-            cart.pop()
+            var confirmation=confirm('Are you sure, this is irreversible')
+            console.log(confirm);
+            if(confirmation==true){
+                cart.pop()
             document.getElementById('showResult').innerHTML=''
             for(var i = 0; i<cart.length; i++){
                 showResult.innerHTML+=`<h3>${i+1}.${cart[i]}</h3>`
             }
+            }else{
+                function displayCart(){
+          document.getElementById('showResult').innerHTML=''
+        for (var i = 0; i<cart.length; i++){
+                showResult.innerHTML+=`<h3>${i+1}.${cart[i]}</h3>`
+            }
+      }
+            }
+            
+            
         }
         function delFirst(){
            cart.shift()
@@ -54,6 +68,12 @@
         //     alert('yert')
         // }
         //  displayCart()
+        function displayCart(){
+            document.getElementById('showResult').innerHTML=''
+            for (var i = 0; i<cart.length; i++){
+                showResult.innerHTML+=`<h3>${i+1}.${cart[i]}</h3>`
+            }
+        }
     </script>
 </body>
 </html>

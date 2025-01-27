@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>async</title>
+</head>
+<body>
+    <button onclick="getInfo()">getInformation</button>
+    <div id="show"></div>
+    <script>
+        const getInfo=async()=>{
+            const url = "https://jsonplaceholder.typicode.com/"
+          let result= await fetch(url)
+          console.log(result);
+            let latestResult=await result.json()
+            for (let index = 0; index < latestResult.length; index++) {
+                const element = latestResult[index];
+                  document.getElementById("show").innerHTML+=`${element.name}`
+            }
+          
+            console.log(latestResult);
+            
+        }
+
+        // //synchronous programming
+        // let person1 = 'Akinola'
+        // let person2 = 'Joshua'
+        // console.log(person1);
+        // console.log(person2);
+        // //just as .map, however  it takes in two functions a callback and time in millisec, now the the code will not run/execute until 5000milisec which is amount to 5sec, now is not sync but Async. the time will change the normal flow of our code. // where we do use Async mostly is when trying to fetch for API
+        // //Async program
+        // setTimeout(()=>{
+        //     console.log(person1);
+        // },
+        // 5000)
+        // console.log(person2);
+    </script>
+</body>
+</html>
+  
