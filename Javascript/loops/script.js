@@ -14,6 +14,10 @@ var student = 'DCP'
 console.log('The name of the student is ' + student + ' and his favourite food is ' + food + ' and his best drink is ' + drink);
 
 console.log(`The name of the student is ${student} and his favourite food is ${food} and his best drink is ${drink}`);
+const a = 1
+const b = 3
+const min  =  [b,a] [+(a<b)];
+console.log(min);
 
 
 

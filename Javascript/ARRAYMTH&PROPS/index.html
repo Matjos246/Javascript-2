@@ -10,7 +10,7 @@
 <body>
     <div class="cartie" >
         <h2 class="title">GIG Store</h2>
-        <input type="text" placeholder="Enter your item" id="item" value="" autofocus > 
+        <input type="text" placeholder="Enter your item" id="item" value="bread" autofocus > 
        
        
         <div class="btn">
@@ -25,16 +25,10 @@
       
         </div>
         <marquee behavior="" direction=""> <div id="showTime"></div></marquee>
-       
-   
     <div id="nope">No item yet</div>
     <div id="show" style="display:none; ">PRODUCTS</div>
-
     <div id="showResult"></div>
-
 </div>
-   
-  
     <script>
           var time = new Date() //it use to fetch current date and time in app
           console.log(time);
@@ -50,11 +44,8 @@
             cart.push(item.value)
             console.log(cart);
             console.log(item.value);
-            
-           
             displayCart()
              document.getElementById('item').value=""
-    
          }
         }
         function delLast(){
@@ -79,9 +70,7 @@
                 cart.shift()
                 displayCart()
             }
-          
         }
-      
         function addFirst() {
     if (item.value == "") {
         alert("Please enter an item to add to the beginning of the cart.");
@@ -91,9 +80,25 @@
         document.getElementById("item").value = ""; // Clear the input field
     }
 }
-
-
-
+function editItem() {
+    if (cart.length < 1) {
+        alert("No items in the cart to edit!");
+    } else {
+        let index = prompt(`Enter the position (1-${cart.length}) of the item you want to edit:`);
+        if (index !== null) {
+            index = parseInt(index) - 1; // Convert to zero-based index
+            if (isNaN(index) || index < 0 || index >= cart.length) {
+                alert("Invalid position! Please enter a valid number.");
+            } else {
+                let newValue = prompt(`Edit item "${cart[index]}":`);
+                if (newValue) {
+                    cart[index] = newValue; // Update the item in the cart
+                    displayCart(); // Update the displayed cart
+                }
+            }
+        }
+    }
+}
       //for  all the function there is a repetition of code all through(for loop), to concise so the function can be kept somewia and just be call-in where needed. 
       function displayCart(){
           document.getElementById('showResult').innerHTML=''
@@ -113,6 +118,7 @@
         // var people= [ 'Ayo' , 'dele', 'sola','leke']
         // console.log(people);
         // showResult.innerHTML=`<p>${people}</p>`
+       
         
 
     </script>

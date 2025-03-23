@@ -3,7 +3,8 @@
     margin: 10px;
     justify-items: center;
     justify-content: space-around;
-   
+    background-color: darkgrey;
+   background-image:url(./pexels-lum3n-44775-399161.jpg);
 }
 
 h2{
